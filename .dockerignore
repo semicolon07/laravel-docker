@@ -1,0 +1,5 @@
+app/.git
+app/.idea
+app/.env.prod
+app/storage/logs
+app/storage/cache
