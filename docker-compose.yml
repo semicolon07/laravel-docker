@@ -43,16 +43,18 @@ services:
     command: "composer install" # คำสั่ง สำหรับ install package
 
   ftp:
-    container_name: dfc_ftpes-server-vsftpd
-    image: docker.io/panubo/vsftpd
+    container_name: ftp
+    image: bogem/ftp
     ports:
+      - "20:20"
       - "21:21"
-      - "8001-8010:8001-8010"
+      - "47400-47470:47400-47470"
     environment:
       FTP_USER: taro
       FTP_PASSWORD: Taro#2021
+      PASV_ADDRESS: localhost
     volumes:
-      - ./app/:/srv/
+      - ./app/:/home/vsftpd
     restart: on-failure
 
   # Phpmyadmin (optional) อันนี้เพิ่มเติม หากว่าเราต้องการที่จะ explore database อันนี้ขี้เกียจอธิบายละ 5555
