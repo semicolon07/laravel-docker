@@ -51,7 +51,7 @@ services:
       - "47400-47470:47400-47470"
     environment:
       FTP_USER: taro
-      FTP_PASSWORD: Taro#2021
+      FTP_PASS: Taro#2021
       PASV_ADDRESS: localhost
     volumes:
       - ./app/:/home/vsftpd
