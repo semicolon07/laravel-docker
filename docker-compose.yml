@@ -42,6 +42,18 @@ services:
       - php
     command: "composer install" # คำสั่ง สำหรับ install package
 
+  ftp:
+    container_name: dfc_ftpes-server-vsftpd
+    image: docker.io/panubo/vsftpd
+    ports:
+      - "21:21"
+      - "8001-8010:8001-8010"
+    environment:
+      FTP_USER: taro
+      FTP_PASSWORD: Taro#2021
+    volumes:
+      - ./app/:/srv/
+    restart: on-failure
 
   # Phpmyadmin (optional) อันนี้เพิ่มเติม หากว่าเราต้องการที่จะ explore database อันนี้ขี้เกียจอธิบายละ 5555
   myadmin:
