@@ -55,7 +55,7 @@ services:
       PASV_ADDRESS: localhost
     volumes:
       - ./app/:/home/vsftpd
-    restart: on-failure
+    restart: always
 
   # Phpmyadmin (optional) อันนี้เพิ่มเติม หากว่าเราต้องการที่จะ explore database อันนี้ขี้เกียจอธิบายละ 5555
   myadmin:
